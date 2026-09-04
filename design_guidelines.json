@@ -1,0 +1,156 @@
+{
+  "app_name": "Verity Voice",
+  "app_type": "Light Clinical Verification Interface",
+  "theme": "Light Clinical / High-Trust Medical-Tech",
+  "colors": {
+    "background": {
+      "primary": "#F8FAFC",
+      "secondary": "#F1F5F9",
+      "card": "#FFFFFF",
+      "overlay": "rgba(255, 255, 255, 0.85)"
+    },
+    "text": {
+      "primary": "#0F172A",
+      "secondary": "#475569",
+      "muted": "#64748B",
+      "accent": "#0284C7"
+    },
+    "border": {
+      "default": "#E2E8F0",
+      "subtle": "#F1F5F9",
+      "strong": "#CBD5E1",
+      "focus": "#0284C7"
+    },
+    "status": {
+      "human_emerald": {
+        "bg": "#ECFDF5",
+        "border": "#A7F3D0",
+        "text": "#047857",
+        "badge": "#059669"
+      },
+      "ai_generated_rose": {
+        "bg": "#FFF1F2",
+        "border": "#FECDD3",
+        "text": "#BE123C",
+        "badge": "#E11D48"
+      },
+      "warning_amber": {
+        "bg": "#FFFBEB",
+        "border": "#FDE68A",
+        "text": "#B45309",
+        "badge": "#D97706"
+      },
+      "info_sky": {
+        "bg": "#F0F9FF",
+        "border": "#BAE6FD",
+        "text": "#0369A1",
+        "badge": "#0284C7"
+      }
+    },
+    "gradients": {
+      "brand_button": "linear-gradient(135deg, #0284C7 0%, #2563EB 100%)",
+      "human_gradient": "linear-gradient(135deg, #059669 0%, #10B981 100%)",
+      "ai_gradient": "linear-gradient(135deg, #E11D48 0%, #F43F5E 100%)",
+      "grid_overlay": "radial-gradient(circle at 50% 0%, rgba(2, 132, 199, 0.05) 0%, transparent 75%)"
+    }
+  },
+  "typography": {
+    "font_families": {
+      "headings": "Outfit, Manrope, sans-serif",
+      "body": "IBM Plex Sans, Inter, system-ui, sans-serif",
+      "mono": "JetBrains Mono, IBM Plex Mono, monospace"
+    },
+    "scale": {
+      "hero_heading": "text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900",
+      "section_heading": "text-2xl sm:text-3xl font-semibold tracking-tight text-slate-900",
+      "subsection_heading": "text-lg sm:text-xl font-medium text-slate-800",
+      "body_text": "text-base leading-relaxed text-slate-600",
+      "small_label": "text-xs font-medium uppercase tracking-widest text-slate-500",
+      "mono_metric": "font-mono text-sm tracking-tight text-slate-700"
+    }
+  },
+  "layouts": {
+    "container": "max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12",
+    "card_grid": "grid grid-cols-1 lg:grid-cols-12 gap-8 items-start",
+    "main_panel": "lg:col-span-7 space-y-6",
+    "side_panel": "lg:col-span-5 space-y-6",
+    "bento_grid": "grid grid-cols-1 md:grid-cols-3 gap-4"
+  },
+  "visual_enhancers": {
+    "subtle_grid_background": "bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:2rem_2rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]",
+    "glass_card": "bg-white/80 backdrop-blur-md border border-slate-200 shadow-sm rounded-2xl p-6 sm:p-8 hover:border-slate-300 transition-all duration-200",
+    "meter_container": "relative w-full bg-slate-100 rounded-full h-4 overflow-hidden border border-slate-200/80 shadow-inner",
+    "waveform_canvas": "w-full h-28 bg-slate-950 rounded-xl p-3 border border-slate-800 shadow-inner flex items-center justify-center relative overflow-hidden"
+  },
+  "components": {
+    "header": {
+      "description": "Clinical Header with Brand logo, HuggingFace model badge, status pulse, and Quick Sample loader",
+      "data_testid": "app-header"
+    },
+    "tabs": {
+      "description": "Record Mic vs Upload Audio tab selector with high contrast active state and keyboard navigation",
+      "data_testid": "audio-source-tabs"
+    },
+    "upload_zone": {
+      "description": "Drag and drop zone accepting WAV, MP3, M4A, WebM up to 25MB, with animated drop outline and file spec callout",
+      "data_testid": "audio-upload-dropzone"
+    },
+    "recorder_zone": {
+      "description": "Microphone recorder with real-time Web Audio API frequency visualizer, timer, pause/stop controls, and browser permission handling",
+      "data_testid": "audio-recorder-zone"
+    },
+    "audio_player_preview": {
+      "description": "Pre-analysis playback bar with interactive waveform, time scrubbing, playback speed, and metadata pill (duration, format, 16kHz mono auto-conversion notice)",
+      "data_testid": "audio-preview-player"
+    },
+    "analyze_button": {
+      "description": "Primary CTA button triggering FastAPI HuggingFace inference with loading spinner & lazy-load warning",
+      "data_testid": "analyze-audio-button"
+    },
+    "confidence_meter": {
+      "description": "Calibrated score meter showing confidence percentage, threshold markers (0-50% AI / 50-100% Human), and animated fill",
+      "data_testid": "confidence-score-meter"
+    },
+    "result_badge": {
+      "description": "High-visibility status badge ('Likely Human' or 'AI-Generated') with color coding and icon indicator",
+      "data_testid": "classification-result-badge"
+    },
+    "disclaimer_card": {
+      "description": "Clinical notice emphasizing that classification is probabilistic AI estimation and not forensic legal proof",
+      "data_testid": "probabilistic-disclaimer-card"
+    },
+    "model_status_toast": {
+      "description": "Alert banner explaining HuggingFace model lazy loading (~300MB download on first run) with friendly retry action if HF fails",
+      "data_testid": "model-status-alert"
+    }
+  },
+  "image_urls": [
+    {
+      "category": "sound_wave_background",
+      "url": "https://images.unsplash.com/photo-1729420199992-c85770a255fb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODl8MHwxfHNlYXJjaHw0fHxzb3VuZCUyMHdhdmUlMjBhdWRpbyUyMHZlcmlmaWNhdGlvbiUyMHNwZWN0cnVtfGVufDB8fHx8MTc4ODUzNjEyNHww&ixlib=rb-4.1.0&q=85",
+      "description": "Blue sound wave graphic asset for preview banner background"
+    },
+    {
+      "category": "audio_spectrum_art",
+      "url": "https://images.unsplash.com/photo-1724185773486-0b39642e607e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODl8MHwxfHNlYXJjaHwyfHxzb3VuZCUyMHdhdmUlMjBhdWRpbyUyMHZlcmlmaWNhdGlvbiUyMHNwZWN0cnVtfGVufDB8fHx8MTc4ODUzNjEyNHww&ixlib=rb-4.1.0&q=85",
+      "description": "Spectrum visual asset for clinical audio analysis hero illustration"
+    }
+  ],
+  "instructions_to_main_agent": [
+    "Ensure all interactive elements have explicit data-testid attributes (e.g. data-testid='upload-input', data-testid='record-mic-button', data-testid='analyze-button').",
+    "Integrate HuggingFace model lazy-loading state gracefully in UI with a friendly downloading indicator and clear retry button if connection drops.",
+    "Implement Web Audio API for recording microphone input and rendering real-time waveform visualization.",
+    "Display audio duration up to 60 seconds (highlighting if audio is truncated to first 60 seconds).",
+    "Show a clear, high-contrast Confidence Meter with % score, verdict badge ('Likely Human' vs 'AI-Generated'), and prominent probabilistic legal disclaimer.",
+    "Support preset sample audio files (e.g., Human Sample, Synthetic AI Sample) for immediate 1-click testing.",
+    "Ensure files are immediately purged after analysis and display a 'Temporary File Purged' privacy badge.",
+    "Use Lucide React or Phosphor icons for medical/audio verification icons (Mic, Upload, ShieldCheck, Sparkles, AlertCircle, RefreshCw, FileAudio)."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": {
+    "testing_attributes": "All interactive and key informational elements MUST include a data-testid attribute in kebab-case format.",
+    "spacing": "Use generous padding (p-6, p-8) and spacing (gap-6, gap-8) to prevent text collision and maintain a clean clinical feel.",
+    "theme_rules": "Light theme background with ultra-crisp slate borders (#E2E8F0) and subtle glassmorphism cards. High contrast text (#0F172A).",
+    "color_discipline": "Reserve Emerald (#059669) exclusively for Likely Human verdicts, Rose (#E11D48) for AI-Generated verdicts, and Sky Blue (#0284C7) for interactive CTAs.",
+    "no_emoji_icons": "Do NOT use AI assistant emoji characters (🤖, 🧠, 💡) for UI icons. Use Lucide SVG icons exclusively."
+  }
+}

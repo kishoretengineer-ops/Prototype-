@@ -1,0 +1,72 @@
+{
+  "passed": 9,
+  "failed": 0,
+  "action_items": [],
+  "bugs": [],
+  "retest_needed": false,
+  "checks": [
+    {
+      "criterion": "A valid audio sample can be analyzed through the real Hugging Face-backed API",
+      "name": "test_tscheck_analyze.py",
+      "lane": "backend",
+      "status": "passed",
+      "evidence": "HTTP POST /api/analyze with tscheck-analysis.wav returned 200; response contained a valid classification, confidence, duration, model_id, and temporary_file_purged=true."
+    },
+    {
+      "criterion": "Invalid format and oversized files are handled clearly",
+      "name": "test_tscheck_validation.py",
+      "lane": "backend",
+      "status": "passed",
+      "evidence": "HTTP POST /api/analyze with .txt returned 415 Unsupported format; oversized WAV returned 413 with 25 MB limit detail."
+    },
+    {
+      "criterion": "The Verity Voice shell is visible as a light clinical responsive interface with brand, source tabs, upload area, result panel, model notice, and disclaimer",
+      "name": "verity-shell-renders",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Public preview rendered app-header, audio-source-tabs, audio-upload-dropzone, results-panel, model-status-alert, and probabilistic-disclaimer-card at desktop viewport."
+    },
+    {
+      "criterion": "Users can switch between upload and microphone recording sources",
+      "name": "audio-source-switches",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Record tab displayed audio-recorder-zone and controls; Upload tab restored audio-upload-dropzone."
+    },
+    {
+      "criterion": "Users can choose an accepted audio file and preview it before analysis",
+      "name": "audio-file-previews",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Selecting tscheck-preview.wav displayed filename, normalization metadata, HTML audio player, and enabled Analyze audio."
+    },
+    {
+      "criterion": "A valid audio sample can be analyzed through the real Hugging Face-backed API",
+      "name": "audio-analysis-real-api",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Browser POST /api/analyze completed with status 200 and displayed a real classification/confidence result; no mocked result used."
+    },
+    {
+      "criterion": "The result readout communicates confidence and responsible interpretation",
+      "name": "analysis-result-readout",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Successful analysis displayed exact classification, percentage confidence, non-zero filled meter, duration, Purged status, and persistent disclaimer."
+    },
+    {
+      "criterion": "Invalid format and oversized files are handled clearly",
+      "name": "audio-validation-errors",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Unsupported .txt and 25 MB+ WAV were rejected inline; no preview was created and no analysis submission occurred."
+    },
+    {
+      "criterion": "The model-loading experience is transparent and fail-closed",
+      "name": "model-loading-fail-closed",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Model notice explained lazy first-run loading and explicitly promised a clear retry instead of a guessed result."
+    }
+  ]
+}
